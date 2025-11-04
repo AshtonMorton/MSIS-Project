@@ -1,22 +1,122 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    --osu-orange: #ff6600;
+    --osu-black: #000;
+    --osu-gray: #f5f5f5;
+    --text: #222;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    color: var(--text);
+    background: white;
+}
+
+/* Header */
+#site-header {
+    background: white;
+    text-align: center;
+    border-bottom: 4px solid var(--osu-orange);
+}
+
+.osu-ribbon {
+    background: var(--osu-gray);
+    padding: 6px 0;
+}
+
+.osu-link {
+    color: var(--osu-orange);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.osu-logo {
+    background: var(--osu-orange);
+    color: var(--osu-black);
+    display: inline-block;
+    font-weight: 900;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.osu-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.osu-nav a {
+    color: var(--osu-black);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .osu-nav a:hover {
+        color: var(--osu-orange);
+    }
+
+/* Main */
+#site-main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.hero {
+    background: var(--osu-orange);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.site-footer {
+    background: var(--osu-black);
+    color: #ddd;
+    margin-top: var(--gap-xl)
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--gap-lg);
+    padding: 2rem 0
+}
+
+.footer-block h5 {
+    color: #fff;
+    margin: .25rem 0 .5rem
+}
+
+.footer-links {
+    margin: 0;
+    padding-left: 0;
+    list-style: none
+}
+
+    .footer-links li {
+        margin: .25rem 0
+    }
+
+    .footer-links a {
+        color: #ddd
+    }
+
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline
+        }
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding: .75rem 0;
+    text-align: center;
+    color: #bbb;
+    font-size: .9rem
 }
