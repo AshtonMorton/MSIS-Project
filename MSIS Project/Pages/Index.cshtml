@@ -3,9 +3,97 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSU DevOps Webpage</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-<div class="text-center">
-    <h1 class="display-4">Hello from Thomas – pipeline test again</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
 
+    <!-- =======================
+         HEADER SECTION
+         (Person 1)
+         ======================= -->
+    <header id="site-header">
+        <!-- Top ribbon / OKSTATE link -->
+        <div class="osu-ribbon">
+            <a href="#" class="osu-link">↖ OKSTATE.EDU</a>
+        </div>
+
+        <!-- Logo + Navigation -->
+        <div class="osu-header">
+            <div class="osu-logo">OSU</div>
+            <h1 class="osu-title">SPEARS SCHOOL OF BUSINESS</h1>
+
+            <nav class="osu-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#jenkins">Jenkins</a></li>
+                    <li><a href="#jira">Jira</a></li>
+                    <li><a href="#review">Review</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="accent-bar"></div>
+    </header>
+
+
+
+    <!-- =======================
+         MAIN SECTION
+         (Person 2)
+         ======================= -->
+    <main id="site-main">
+        <!-- Intro / Hero -->
+        <section id="home" class="hero">
+            <h2>Welcome to Our DevOps Project</h2>
+            <p>This page demonstrates Jenkins & Jira features as part of our OSU DevOps assignment.</p>
+        </section>
+
+        <!-- Jenkins Feature Section -->
+        <section id="jenkins">
+            <h3>Jenkins Automation</h3>
+            <p>Example features: automated builds, post-build testing, and deployment pipelines.</p>
+        </section>
+
+        <!-- Jira Feature Section -->
+        <section id="jira">
+            <h3>Jira Integration</h3>
+            <p>Example features: issue linking to commits, Kanban workflow for agile tracking.</p>
+        </section>
+
+        <!-- Review Section -->
+        <section id="review">
+            <h3>Product Review</h3>
+            <p>Brief analysis of Jenkins and Jira from an MIS perspective (strengths and weaknesses).</p>
+        </section>
+
+        <!-- Contact / Contributors -->
+        <section id="contact">
+            <h3>Contact & Contributors</h3>
+            <ul>
+                <li>Person 1 – Header Developer</li>
+                <li>Person 2 – Main Section Developer</li>
+                <li>Person 3 – Footer Developer</li>
+            </ul>
+        </section>
+    </main>
+
+
+
+    <!-- =======================
+         FOOTER SECTION
+         (Person 3)
+         ======================= -->
+    <footer id="site-footer">
+        <p>© 2025 Oklahoma State University · Spears School of Business</p>
+        <p>Created by [Team Name] for MSIS DevOps Course</p>
+    </footer>
+
+</body>
+</html>
