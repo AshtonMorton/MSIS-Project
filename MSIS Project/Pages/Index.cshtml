@@ -98,21 +98,12 @@
     <section id="tools" class="tools container" aria-labelledby="tools-title">
         <h3 id="tools-title">Our Toolchain</h3>
 
-        <div class="marquee" role="region" aria-label="Scrolling list of tool logos">
-            <!-- lane A -->
-            <div class="marquee__group">
+        <div class="ticker" id="toolTicker" role="region" aria-label="Scrolling list of tool logos">
+            <div class="ticker-track">
                 <img src="/images/jenkins.png" alt="Jenkins logo">
                 <img src="/images/github.png" alt="GitHub logo">
                 <img src="/images/azure.png" alt="Microsoft Azure logo">
                 <img src="/images/jira.png" alt="Jira logo">
-            </div>
-
-            <!-- lane B (duplicate, aria-hidden) -->
-            <div class="marquee__group" aria-hidden="true">
-                <img src="/images/jenkins.png" alt="">
-                <img src="/images/github.png" alt="">
-                <img src="/images/azure.png" alt="">
-                <img src="/images/jira.png" alt="">
             </div>
         </div>
     </section>
@@ -163,3 +154,52 @@
     </div>
 
 </footer>
+
+
+<script>
+    (function () {
+      // respect reduced-motion users
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const container = document.getElementById('toolTicker');
+      if (!container) return;
+
+      const track = container.querySelector('.ticker-track');
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+
+      // Duplicate logos until we have > 2x container width
+      function ensureFill() {
+        const containerW = container.clientWidth;
+        while (track.scrollWidth < containerW * 2) {
+          track.innerHTML += track.innerHTML;
+        }
+      }
+      ensureFill();
+      window.addEventListener('resize', () => { /* optional: re-fill on resize if needed */ });
+
+      let x = 0;
+      let speed = 0.6;       // px per frame (~36px/s at 60fps)
+      let paused = false;
+
+      function step() {
+        if (!paused) {
+          x -= speed;
+
+          // When the first child fully leaves, move it to the end and adjust offset
+          const first = track.firstElementChild;
+          const firstW = first.getBoundingClientRect().width + gap;
+          if (-x >= firstW) {
+            track.appendChild(first);
+            x += firstW;
+          }
+          track.style.transform = `translateX(${x}px)`;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+      // Pause on hover (optional)
+      container.addEventListener('mouseenter', () => paused = true);
+      container.addEventListener('mouseleave', () => paused = false);
+    })();
+</script>

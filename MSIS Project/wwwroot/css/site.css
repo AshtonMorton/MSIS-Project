@@ -69,66 +69,38 @@
 
 }
 
-/* Seamless, width-proof marquee */
-.marquee {
-    display: flex; /* lanes sit side-by-side */
+/* ticker */
+.ticker {
     overflow: hidden;
     background: var(--osu-gray);
     border-radius: 8px;
     padding: 1.25rem 0;
     margin: var(--gap-xl) 0;
-    /* soft edge fade (optional) */
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
 }
 
-.marquee__group {
-    flex-shrink: 0; /* don't squeeze a lane */
+.ticker-track {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
-    padding-right: 2.5rem; /* matches gap for perfect handoff */
-    animation: marquee-scroll 20s linear infinite;
+    gap: 40px; /* keep this consistent */
     will-change: transform;
 }
 
-/* logos */
-.marquee img {
+.ticker img {
     height: 60px;
     width: auto;
     filter: grayscale(10%);
     opacity: .9;
-    transition: filter .2s ease, opacity .2s ease, transform .12s ease;
+    transition: filter .2s, opacity .2s, transform .12s;
 }
 
-    .marquee img:hover {
+    .ticker img:hover {
         filter: none;
         opacity: 1;
         transform: translateY(-2px);
     }
 
-/* pause on hover (optional) */
-.marquee:hover .marquee__group {
-    animation-play-state: paused;
-}
-
-@keyframes marquee-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-    /* slide one full lane width */
-}
-
-/* accessibility */
-@media (prefers-reduced-motion: reduce) {
-    .marquee__group {
-        animation: none;
-    }
-}
 code {
     color: var(--osu-orange);
     font-weight: 700;
