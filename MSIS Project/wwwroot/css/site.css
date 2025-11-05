@@ -74,14 +74,18 @@
     border-radius: 8px;
     padding: 1.25rem 0;
     margin: var(--gap-xl) 0;
+    /* optional: soft edge fade */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
 }
 
     .logo-carousel .track {
         display: flex;
         gap: 2.5rem;
         align-items: center;
-        white-space: nowrap;
+        width: max-content; /* <— key: shrink-wrap to content */
         animation: scroll-logos 22s linear infinite;
+        will-change: transform;
     }
 
     .logo-carousel img {
@@ -96,13 +100,26 @@
             opacity: 1;
         }
 
+    /* pause on hover (optional) */
+    .logo-carousel:hover .track {
+        animation-play-state: paused;
+    }
+
 @keyframes scroll-logos {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-50%);
+    }
+    /* moves exactly one full copy width */
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .logo-carousel .track {
+        animation: none;
     }
 }
 
