@@ -13,68 +13,87 @@
          (Person 2)
          ======================= -->
     <main id="site-main">
-        <!-- Intro / Hero -->
-        <section id="home" class="hero">
-            <h2>Welcome to Our DevOps Project</h2>
-            <p>This page demonstrates Jenkins & Jira features as part of our OSU DevOps assignment.</p>
-        </section>
+  <!-- Intro / Hero -->
+  <section id="home" class="hero osu-hero" aria-labelledby="hero-title">
+    <h2 id="hero-title">DevOps in Action @@OSU</h2>
+    <p>This landing page demonstrates how Jenkins (CI) + GitHub Actions (CD) + Azure + Jira map to entry-level DevOps skills.</p>
+    <a class="btn-cta" href="#concepts">See the workflow</a>
+  </section>
 
-        <!-- Jenkins Feature Section -->
-        <section id="jenkins">
-            <h3>Jenkins Automation</h3>
-            <p>Example features: automated builds, post-build testing, and deployment pipelines.</p>
-        </section>
+  <!-- DevOps Concepts (Cards) -->
+  <section id="concepts" class="cards container" aria-labelledby="concepts-title">
+    <h3 id="concepts-title">DevOps Concepts in Our Project</h3>
 
-        <!-- Jira Feature Section -->
-        <section id="jira">
-            <h3>Jira Integration</h3>
-            <p>Example features: issue linking to commits, Kanban workflow for agile tracking.</p>
-        </section>
+    <div class="card-grid">
+      <article class="card">
+        <h4>Continuous Integration (CI)</h4>
+        <p>Jenkins auto-builds on commits (restore → build → publish → archive), ensuring the app is always in a releasable state.</p>
+        <ul>
+          <li>Auto pull from GitHub (Poll SCM)</li>
+          <li>Build artifacts archived per run</li>
+          <li>Green/Red feedback loop</li>
+        </ul>
+      </article>
 
-        <!-- Review Section -->
-        <section id="review">
-            <h3>Product Review</h3>
-            <p>Brief analysis of Jenkins and Jira from an MIS perspective (strengths and weaknesses).</p>
-        </section>
+      <article class="card">
+        <h4>Continuous Deployment (CD)</h4>
+        <p>GitHub Actions deploys to Azure Web Apps on merge to <code>master</code>, giving fast, consistent releases from the cloud.</p>
+        <ul>
+          <li>Build & Publish in workflow</li>
+          <li>Zip deploy to App Service</li>
+          <li>Zero manual steps</li>
+        </ul>
+      </article>
 
-        <!-- Contact / Contributors -->
-        <section id="contact">
-            <h3>Contact & Contributors</h3>
-            <ul>
-                <li>Person 1 – Header Developer</li>
-                <li>Person 2 – Main Section Developer</li>
-                <li>Person 3 – Footer Developer</li>
-            </ul>
-        </section>
-    </main>
+      <article class="card">
+        <h4>Collaboration & Tracking</h4>
+        <p>Jira issues map to branches/PRs. We review, merge, and let CI/CD take it from there—like a real entry-level DevOps flow.</p>
+        <ul>
+          <li>Branch per feature</li>
+          <li>PR reviews before merge</li>
+          <li>Simple sprint board</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
+  <!-- Tools Carousel -->
+  <section id="tools" class="tools container" aria-labelledby="tools-title">
+    <h3 id="tools-title">Our Toolchain</h3>
+    <div class="logo-carousel" role="region" aria-label="Scrolling list of tool logos">
+      <div class="track">
+        <img src="/images/jenkins.png" alt="Jenkins logo" />
+        <img src="/images/github.png" alt="GitHub logo" />
+        <img src="/images/azure.png" alt="Microsoft Azure logo" />
+        <img src="/images/jira.png" alt="Jira logo" />
+        <!-- duplicate for seamless loop -->
+        <img src="/images/jenkins.png" alt="Jenkins logo" />
+        <img src="/images/github.png" alt="GitHub logo" />
+        <img src="/images/azure.png" alt="Microsoft Azure logo" />
+        <img src="/images/jira.png" alt="Jira logo" />
+      </div>
+    </div>
+  </section>
 
+  <!-- Review / Takeaways -->
+  <section id="review" class="container" aria-labelledby="review-title">
+    <h3 id="review-title">Key Takeaways for Entry-Level DevOps</h3>
+    <ul class="takeaways">
+      <li>Automate the path from commit → build → deploy to reduce human error.</li>
+      <li>Use branches + PRs to keep <code>master</code> stable and traceable.</li>
+      <li>Cloud deploys (Azure) demonstrate platform skills you’ll use day one.</li>
+    </ul>
+  </section>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-block">
-                <h5>About This Project</h5>
-                <p class="muted">Academic project for course demonstration. Uses official OSU colors and accessible design patterns.</p>
-            </div>
-            <div class="footer-block">
-                <h5>Links</h5>
-                <ul class="footer-links">
-                    <li><a href="#review">Product Review</a></li>
-                    <li><a href="#devops">DevOps Mapping</a></li>
-                    <li><a href="#tools">Tools</a></li>
-                    <li><a href="#cta">Executive Brief</a></li>
-                </ul>
-            </div>
-            <div class="footer-block">
-                <h5>Contact</h5>
-                <p class="muted">Spears School of Business • Oklahoma State University</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <small>© <span id="year"></span> Oklahoma State University (Academic Use). Built by Team.</small>
-            </div>
-        </div>
-    </footer>
-</html>
->>>>>>> b78561fb4c1300de5122f61d3300f08f09d1f294
+  <!-- Contact / Contributors (you can keep your existing list if you prefer) -->
+  <section id="contact" class="container" aria-labelledby="contact-title">
+    <h3 id="contact-title">Contributors</h3>
+    <ul>
+      <li>Person 1 – Header / Navigation</li>
+      <li>Thomas – Main Content & CI/CD Integration</li>
+      <li>Person 3 – Footer / Links</li>
+    </ul>
+  </section>
+</main>
+    
+

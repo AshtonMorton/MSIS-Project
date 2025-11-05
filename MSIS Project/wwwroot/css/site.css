@@ -1,122 +1,119 @@
+/* ===== OSU variables + utilities (add these at the top) ===== */
 :root {
-    --osu-orange: #ff6600;
-    --osu-black: #000;
-    --osu-gray: #f5f5f5;
-    --text: #222;
+    --osu-orange: #f76902;
+    --osu-black: #000000;
+    --osu-gray: #f1f1f1;
+    --text: #222222;
+    /* spacing scale used by footer etc. */
+    --gap-xs: .25rem;
+    --gap-sm: .5rem;
+    --gap-md: 1rem;
+    --gap-lg: 1.5rem;
+    --gap-xl: 2rem;
 }
 
-body {
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    color: var(--text);
-    background: white;
-}
-
-/* Header */
-#site-header {
-    background: white;
-    text-align: center;
-    border-bottom: 4px solid var(--osu-orange);
-}
-
-.osu-ribbon {
-    background: var(--osu-gray);
-    padding: 6px 0;
-}
-
-.osu-link {
-    color: var(--osu-orange);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.osu-logo {
-    background: var(--osu-orange);
-    color: var(--osu-black);
-    display: inline-block;
-    font-weight: 900;
-    padding: 8px 16px;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-.osu-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-}
-
-.osu-nav a {
-    color: var(--osu-black);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-    .osu-nav a:hover {
-        color: var(--osu-orange);
-    }
-
-/* Main */
-#site-main {
-    max-width: 900px;
-    margin: 40px auto;
+/* container helper for middle section */
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
     padding: 0 20px;
 }
 
-section {
-    margin-bottom: 40px;
+/* hero CTA button */
+.btn-cta {
+    display: inline-block;
+    background: #fff;
+    color: #111;
+    font-weight: 600;
+    padding: .6rem 1.1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: .2s ease;
+    margin-top: .75rem;
 }
 
-.hero {
-    background: var(--osu-orange);
-    color: white;
-    padding: 40px 20px;
-    border-radius: 8px;
+    .btn-cta:hover {
+        background: #111;
+        color: #fff;
+    }
+
+/* cards section */
+.cards h3 {
+    text-align: center;
+    color: #111;
+    margin: var(--gap-xl) 0 var(--gap-md);
 }
 
-.site-footer {
-    background: var(--osu-black);
-    color: #ddd;
-    margin-top: var(--gap-xl)
-}
-
-.footer-inner {
+.card-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--gap-lg);
-    padding: 2rem 0
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: var(--gap-md);
 }
 
-.footer-block h5 {
-    color: #fff;
-    margin: .25rem 0 .5rem
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    padding: 1.25rem;
+    border: 1px solid #e9e9e9;
+    transition: transform .2s ease;
 }
 
-.footer-links {
-    margin: 0;
-    padding-left: 0;
-    list-style: none
-}
-
-    .footer-links li {
-        margin: .25rem 0
+    .card:hover {
+        transform: translateY(-4px);
     }
 
-    .footer-links a {
-        color: #ddd
+    .card h4 {
+        margin: .25rem 0 .5rem;
     }
 
-        .footer-links a:hover {
-            color: #fff;
-            text-decoration: underline
+/* tools carousel */
+.logo-carousel {
+    overflow: hidden;
+    background: var(--osu-gray);
+    border-radius: 8px;
+    padding: 1.25rem 0;
+    margin: var(--gap-xl) 0;
+}
+
+    .logo-carousel .track {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        white-space: nowrap;
+        animation: scroll-logos 22s linear infinite;
+    }
+
+    .logo-carousel img {
+        height: 60px;
+        filter: grayscale(10%);
+        opacity: .9;
+        transition: .2s ease;
+    }
+
+        .logo-carousel img:hover {
+            filter: none;
+            opacity: 1;
         }
 
-.copyright {
-    border-top: 1px solid rgba(255,255,255,.15);
-    padding: .75rem 0;
-    text-align: center;
-    color: #bbb;
-    font-size: .9rem
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
+
+/* review box to match your theme */
+#review {
+    background: var(--osu-gray);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    box-shadow: inset 0 0 8px rgba(0,0,0,.05);
+}
+
+    #review ul {
+        padding-left: 1.25rem;
+    }
