@@ -174,3 +174,49 @@
     font-size: 14px;
 }
 
+/* Header */
+#site-header {
+    background: white;
+    text-align: center;
+    border-bottom: 4px solid var(--osu-orange);
+}
+
+.osu-ribbon {
+    background: var(--osu-gray);
+    padding: 6px 0;
+}
+
+.osu-link {
+    color: var(--osu-orange);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.osu-logo {
+    background: var(--osu-orange);
+    color: var(--osu-black);
+    display: inline-block;
+    font-weight: 900;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.osu-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.osu-nav a {
+    color: var(--osu-black);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .osu-nav a:hover {
+        color: var(--osu-orange);
+    }
+
