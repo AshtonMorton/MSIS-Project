@@ -67,57 +67,65 @@
         margin: .25rem 0 .5rem;
     }
 
-/* tools carousel */
-.logo-carousel {
+}
+
+/* Seamless, width-proof marquee */
+.marquee {
+    display: flex; /* lanes sit side-by-side */
     overflow: hidden;
     background: var(--osu-gray);
     border-radius: 8px;
     padding: 1.25rem 0;
     margin: var(--gap-xl) 0;
-    /* optional: soft edge fade */
+    /* soft edge fade (optional) */
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
 }
 
-    .logo-carousel .track {
-        display: flex;
-        gap: 2.5rem;
-        align-items: center;
-        width: max-content; /* <— key: shrink-wrap to content */
-        animation: scroll-logos 22s linear infinite;
-        will-change: transform;
+.marquee__group {
+    flex-shrink: 0; /* don't squeeze a lane */
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 2.5rem; /* matches gap for perfect handoff */
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+}
+
+/* logos */
+.marquee img {
+    height: 60px;
+    width: auto;
+    filter: grayscale(10%);
+    opacity: .9;
+    transition: filter .2s ease, opacity .2s ease, transform .12s ease;
+}
+
+    .marquee img:hover {
+        filter: none;
+        opacity: 1;
+        transform: translateY(-2px);
     }
 
-    .logo-carousel img {
-        height: 60px;
-        filter: grayscale(10%);
-        opacity: .9;
-        transition: .2s ease;
-    }
+/* pause on hover (optional) */
+.marquee:hover .marquee__group {
+    animation-play-state: paused;
+}
 
-        .logo-carousel img:hover {
-            filter: none;
-            opacity: 1;
-        }
-
-    /* pause on hover (optional) */
-    .logo-carousel:hover .track {
-        animation-play-state: paused;
-    }
-
-@keyframes scroll-logos {
-    0% {
+@keyframes marquee-scroll {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-100%);
     }
+    /* slide one full lane width */
 }
 
-/* accessibility: respect reduced motion */
+/* accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .logo-carousel .track {
+    .marquee__group {
         animation: none;
     }
 }

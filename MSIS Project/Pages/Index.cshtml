@@ -95,23 +95,27 @@
     </div>
   </section>
 
-  <!-- Tools Carousel -->
-  <section id="tools" class="tools container" aria-labelledby="tools-title">
-    <h3 id="tools-title">Our Toolchain</h3>
-    <div class="logo-carousel" role="region" aria-label="Scrolling list of tool logos">
-      <div class="track">
-        <img src="/images/jenkins.png" alt="Jenkins logo" />
-        <img src="/images/github.png" alt="GitHub logo" />
-        <img src="/images/azure.png" alt="Microsoft Azure logo" />
-        <img src="/images/jira.png" alt="Jira logo" />
-        <!-- duplicate for seamless loop -->
-        <img src="/images/jenkins.png" alt="Jenkins logo" />
-        <img src="/images/github.png" alt="GitHub logo" />
-        <img src="/images/azure.png" alt="Microsoft Azure logo" />
-        <img src="/images/jira.png" alt="Jira logo" />
-      </div>
-    </div>
-  </section>
+    <section id="tools" class="tools container" aria-labelledby="tools-title">
+        <h3 id="tools-title">Our Toolchain</h3>
+
+        <div class="marquee" role="region" aria-label="Scrolling list of tool logos">
+            <!-- lane A -->
+            <div class="marquee__group">
+                <img src="/images/jenkins.png" alt="Jenkins logo">
+                <img src="/images/github.png" alt="GitHub logo">
+                <img src="/images/azure.png" alt="Microsoft Azure logo">
+                <img src="/images/jira.png" alt="Jira logo">
+            </div>
+
+            <!-- lane B (duplicate, aria-hidden) -->
+            <div class="marquee__group" aria-hidden="true">
+                <img src="/images/jenkins.png" alt="">
+                <img src="/images/github.png" alt="">
+                <img src="/images/azure.png" alt="">
+                <img src="/images/jira.png" alt="">
+            </div>
+        </div>
+    </section>
 
   <!-- Review / Takeaways -->
   <section id="review" class="container" aria-labelledby="review-title">
