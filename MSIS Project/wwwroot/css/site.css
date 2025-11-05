@@ -134,3 +134,60 @@
     #review ul {
         padding-left: 1.25rem;
     }
+
+.osu-footer {
+    background-color: #FF6600; /* OSU Orange */
+    color: white;
+    padding-top: 35px;
+    margin-top: 60px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+    .footer-container h3,
+    .footer-container h4 {
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .footer-container p,
+    .footer-container a,
+    .footer-container li {
+        font-size: 14px;
+    }
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+    .footer-links a:hover {
+        opacity: 0.75;
+    }
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 25px;
+    background: rgba(0, 0, 0, 0.12);
+    font-size: 14px;
+}
+
